@@ -1,31 +1,31 @@
 # context-menu-demo
 
-A demo of the [contextMenus API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/contextMenus/).
+Um demo da API de [contextMenus](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/contextMenus/) (menus de contexto).
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+**Esse Addon injeta JS na página. O domínio `addons.mozilla.org` não permite este tipo de operação, então esse Addon não irá funcionar em `addons.mozilla.org` .**
 
-## What it does
+## O que ele faz:
 
-This add-on adds several items to the browser's context menu:
+Este add-on adiciona vários itens ao menu de contexto do navegador:
 
-* one shown when there is a selection in the page, that logs the selected text
-to the browser console when clicked.
-* one shown in all contexts, that is removed when clicked.
-* two "radio" items that are shown in all contexts.
-These items are grouped using a separator item on each side.
-One radio item adds a blue border to the page, the other adds a green border.
-Note that these buttons only work on normal web pages, not special pages
-like about:debugging.
-* one "checkbox" item, shown in all contexts, whose title is updated when the
-item is clicked.
+* Um menu para quando há uma seleção na página, e envia o texto selecionado
+para o console do navegador (```console.log()```) quando clicado.
+* Um menu para todos os contextos, que é removido quando clicado.
+* Dois itens do tipo "rádio" que são mostrados em todos os contextos.
+esses itens são agrupados usando um item separador em cada lado.
+Um item de rádio adiciona uma borda azul à página, o outro adiciona uma borda verde.
+Observe que esses botões funcionam somente em páginas da web normais, e não em páginas especiais
+Como ```about:debugging```.
+* Um "checkbox", que aparece em todos os contextos, cujo título é atualizado quando o
+item é clicado.
 
-## What it shows
+## O que ensina:
 
-* How to create various types of context menu item:
-  * normal
-  * radio
-  * separator
-  * checkbox
-* How to use contexts to control when an item appears.
-* How to update an item's properties.
-* How to remove an item.
+* Como criar vários tipos de item de menu de contexto:
+   * normal
+   * Rádio
+   * Separador
+   * Caixa de seleção
+* Como usar contextos para controlar quando um item é exibido.
+* Como atualizar as propriedades de um item.
+* Como remover um item.

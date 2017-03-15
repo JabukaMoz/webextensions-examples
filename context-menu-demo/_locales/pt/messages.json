@@ -1,0 +1,42 @@
+{
+  "extensionName": {
+    "message": "Demo de menu de Contexto",
+    "description": "Nome da Extensão."
+  },
+
+  "extensionDescription": {
+    "message": "Demonstra a API de contextMenus.",
+    "description": "Descrição do Addon."
+  },
+
+  "contextMenuItemSelectionLogger": {
+    "message": "Log '%s' para o console do navegador",
+    "description": "Título do item de menu de contexto que registra o texto selecionado quando clicado."
+  },
+
+  "contextMenuItemRemoveMe": {
+    "message": "Me Remova!",
+    "description": "Título do item de menu de contexto que se remove quando clicado."
+  },
+
+  "contextMenuItemGreenify": {
+    "message": "Verdejante",
+    "description": "Título do item de menu de contexto que adiciona uma borda verde quando clicado."
+  },
+
+  "contextMenuItemBluify": {
+    "message": "Azulão",
+    "description": "Título do item de menu de contexto que adiciona uma borda azul quando clicado."
+  },
+
+  "contextMenuItemCheckMe": {
+    "message": "Marque-me",
+    "description": "Título do item de menu de contexto quando o item é marcado."
+  },
+
+  "contextMenuItemUncheckMe": {
+    "message": "Desmarque-me",
+    "description": "Título do item de menu de contexto quando o item é desmarcado."
+  }
+
+}

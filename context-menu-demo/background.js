@@ -1,6 +1,6 @@
 /*
-Called when the item has been created, or when creation failed due to an error.
-We'll just log success/failure here.
+Chamado quando o item foi criado ou quando a criação falhou devido a um erro.
+Vamos apenas registrar sucesso / falha aqui.
 */
 function onCreated(n) {
   if (browser.runtime.lastError) {
@@ -11,23 +11,23 @@ function onCreated(n) {
 }
 
 /*
-Called when the item has been removed.
-We'll just log success here.
+Chamado quando o item foi removido.
+Vamos registrar o sucesso aqui.
 */
 function onRemoved() {
   console.log("Item removed successfully");
 }
 
 /*
-Called when there was an error.
-We'll just log the error here.
+Chamado quando houve um erro.
+Vamos registrar o erro aqui.
 */
 function onError(error) {
   console.log(`Error: ${error}`);
 }
 
 /*
-Create all the context menu items.
+Crie todos os itens do menu de contexto.
 */
 browser.contextMenus.create({
   id: "log-selection",
@@ -80,10 +80,10 @@ browser.contextMenus.create({
 }, onCreated);
 
 /*
-Set a colored border on the document in the given tab.
+Defina uma borda colorida no documento na guia fornecida.
 
-Note that this only work on normal web pages, not special pages
-like about:debugging.
+Observe que isso só funciona em páginas da web normais, e não em páginas especiais
+Como sobre: depuração.
 */
 var blue = 'document.body.style.border = "5px solid blue"';
 var green = 'document.body.style.border = "5px solid green"';
@@ -95,12 +95,12 @@ function borderify(tabId, color) {
 }
 
 /*
-Toggle checkedState, and update the menu item's title
-appropriately.
+Alternar checkedState e atualizar o título do item de menu
+adequadamente.
 
-Note that we should not have to maintain checkedState independently like
-this, but have to because Firefox does not currently pass the "checked"
-property into the event listener.
+Note que não devemos ter que manter checkedState independentemente como
+Isso, mas tem que porque o Firefox não passa atualmente o "checked"
+Propriedade para o _listener_ de eventos.
 */
 function updateCheckUncheck() {
   checkedState = !checkedState;
@@ -116,8 +116,8 @@ function updateCheckUncheck() {
 }
 
 /*
-The click event listener, where we perform the appropriate action given the
-ID of the menu item that was clicked.
+O _listener_ de eventos de cliques, onde executamos a ação apropriada dada a
+ID do item de menu que foi clicado.
 */
 browser.contextMenus.onClicked.addListener(function(info, tab) {
   switch (info.menuItemId) {
