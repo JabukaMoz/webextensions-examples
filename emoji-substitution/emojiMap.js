@@ -1,5 +1,5 @@
 /*
- * This file contains the Map of word --> emoji substitutions.
+ * Esse arquivo contém o conjunto de substituições para palavras --> emoji.
  */
 
 let dictionary = new Map();

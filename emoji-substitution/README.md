@@ -1,11 +1,11 @@
 # Emoji Substitution
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+**Este complemento injeta JavaScript em páginas da web. O domínio `addons.mozilla.org` não permite esta operação, por isso este complemento não funciona correctamente quando é executado em páginas no domínio` addons.mozilla.org`.**
 
-## What it does
+## O que faz
 
-Replaces words that describe an emoji with the emoji itself. This runs as a content script and scans web pages, looking for text that can be replaced with emoji. As an example, after installing visit https://mozilla.org and notice that the text "firefox" should change.
+Substitui palavras que descrevem um emoji com o próprio emoji. Isso é executado como um script de conteúdo que percorre as páginas da web, procurando por texto que pode ser substituído por emoji. Como exemplo, após a instalação, visite https://mozilla.org e note que o texto "firefox" deve mudar.
 
-## What it shows
+## O que ele mostra
 
-A good example for beginners that can be used as a "make your first add-on" tutorial and / or referenced to create other add-ons.
+Um bom exemplo para iniciantes que pode ser usado como um tutorial "faça o seu primeiro add-on" e / ou referenciado para criar outros add-ons.

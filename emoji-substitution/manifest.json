@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Emoji Substitution",
-  "description": "Replaces words with emojis.",
+  "description": "Troca palavras por emojis.",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/emoji-substitution",
   "version": "1.0",
   "icons": {

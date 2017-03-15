@@ -1,85 +1,84 @@
 /*
- * This file is responsible for performing the logic of replacing
- * all occurrences of each mapped word with its emoji counterpart.
+* Este arquivo é responsável por executar a lógica de substituição
+* Todas as ocorrências de cada palavra mapeada com sua contrapartida emoji.
  */
 
-// emojiMap.js defines the 'sortedEmojiMap' variable.
-// Referenced here to reduce confusion.
+// emojiMap.js define a variável 'sortedEmojiMap'.
+// Referenciado aqui para reduzir a confusão.
 const emojiMap = sortedEmojiMap;
 
 /*
- * For efficiency, create a word --> search RegEx Map too.
+ * Para eficiência, crie uma Mapa com RegEx para palavra -> pesquisa também.
  */
 let regexs = new Map();
 for (let word of emojiMap.keys()) {
-  // We want a global, case-insensitive replacement.
+  // Queremos uma substituição global, sem distinção de maiúsculas e minúsculas.
   // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
   regexs.set(word, new RegExp(word, 'gi'));
 }
 
 /**
- * Substitutes emojis into text nodes.
- * If the node contains more than just text (ex: it has child nodes),
- * call replaceText() on each of its children.
- *
- * @param  {Node} node    - The target DOM Node.
- * @return {void}         - Note: the emoji substitution is done inline.
+  * Substitui emojis em nós de texto.
+  * Se o nó contém mais do que apenas texto (ex: tem nós filhos),
+  * Chame replaceText() em cada um dos seus filhos.
+  *
+  * Nó @param {nó} - O nó DOM de destino.
+  * @return {void} - Nota: a substituição do emoji é feita inline.
  */
 function replaceText (node) {
-  // Setting textContent on a node removes all of its children and replaces
-  // them with a single text node. Since we don't want to alter the DOM aside
-  // from substituting text, we only substitute on single text nodes.
+   // Setting textContent em um nó remove todos os seus filhos e substitui
+   // eles com um único nó de texto. Uma vez que não queremos alterar o DOM de lado
+   // de substituição de texto, só substituímos em nós de texto único.
   // @see https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
   if (node.nodeType === Node.TEXT_NODE) {
-    // This node only contains text.
+    //Esse nó contém apenas texto.
     // @see https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType.
 
-    // Skip textarea nodes due to the potential for accidental submission
-    // of substituted emoji where none was intended.
+    // Pule textAreas para evitar o envio acidental de formulários com emoji
     if (node.parentNode &&
         node.parentNode.nodeName === 'TEXTAREA') {
       return;
     }
 
-    // Because DOM manipulation is slow, we don't want to keep setting
-    // textContent after every replacement. Instead, manipulate a copy of
-    // this string outside of the DOM and then perform the manipulation
-    // once, at the end.
+    // Como a manipulação de DOM é lenta, não queremos ficar trocando
+     // textContent após cada substituição. Em vez disso, manipularemos uma
+     // seqüência de caracteres (string) fora do DOM e, em seguida, executar a troca do
+     // textContent apenas uma vez, no final.
     let content = node.textContent;
 
-    // Replace every occurrence of 'word' in 'content' with its emoji.
-    // Use the emojiMap for replacements.
+     // Substitua todas as ocorrências de 'palavra' em 'conteúdo' pelo seu emoji.
+     // Use o emojiMap para substituições.
     for (let [word, emoji] of emojiMap) {
       // Grab the search regex for this word.
       const regex = regexs.get(word);
 
-      // Actually do the replacement / substitution.
-      // Note: if 'word' does not appear in 'content', nothing happens.
+     // Na verdade, fazer a substituição / substituição.
+     // Nota: se 'palavra' não aparecer em 'conteúdo', nada acontece.
       content = content.replace(regex, emoji);
     }
 
-    // Now that all the replacements are done, perform the DOM manipulation.
+    //Agora que todas as substituições foram feitas, execute a manipulação DOM.
     node.textContent = content;
   }
   else {
-    // This node contains more than just text, call replaceText() on each
-    // of its children.
+    // Este nó contém mais do que apenas texto, chame replaceText() em cada
+    // de seus filhos.
     for (let i = 0; i < node.childNodes.length; i++) {
       replaceText(node.childNodes[i]);
     }    
   }
 }
 
-// Start the recursion from the body tag.
+// Comece a recursão a partir do nó body.
 replaceText(document.body);
 
-// Now monitor the DOM for additions and substitute emoji into new nodes.
+// Agora monitorar o DOM para adições e substituir emoji em novos nós.
 // @see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver.
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     if (mutation.addedNodes && mutation.addedNodes.length > 0) {
-      // This DOM change was new nodes being added. Run our substitution
-      // algorithm on each newly added node.
+      // Esta mudança de DOM foi a adição de novos nós. Execute nossa substituição
+      // em cada nó recém adicionado.
       for (let i = 0; i < mutation.addedNodes.length; i++) {
         const newNode = mutation.addedNodes[i];
         replaceText(newNode);
