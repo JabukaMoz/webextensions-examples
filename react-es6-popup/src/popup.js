@@ -10,7 +10,7 @@ class Popup extends React.Component {
   }
 
   componentDidMount() {
-    // Get the active tab and store it in component state.
+    // Obtenha a guia ativa e a armazene no estado do componente.
     chrome.tabs.query({active: true}, tabs => {
       this.setState({activeTab: tabs[0]});
     });
@@ -25,7 +25,7 @@ class Popup extends React.Component {
           This is an example of a popup UI in React.
         </p>
         <p>
-          Active tab: {activeTab ? activeTab.url : '[waiting for result]'}
+          Active tab: {activeTab ? activeTab.url : '[esperando resultado]'}
         </p>
         <Nested />
       </div>
