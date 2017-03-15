@@ -1,7 +1,7 @@
 "use strict";
 
 /*
-This is the page for which we want to rewrite the User-Agent header.
+Esta é a página para a qual queremos reescrever o cabeçalho User-Agent.
 */
 var targetPage = "https://httpbin.org/*";
 
@@ -15,12 +15,12 @@ var uaStrings = {
 }
 
 /*
-Initialize the UA to Firefox 41.
+Inicialize a UA para Firefox 41.
 */
 var ua = uaStrings["Firefox 41"];
 
 /*
-Rewrite the User-Agent header to "ua".
+Reescreva o cabeçalho User-Agent para "ua".
 */
 function rewriteUserAgentHeader(e) {
   for (var header of e.requestHeaders) {
@@ -32,17 +32,17 @@ function rewriteUserAgentHeader(e) {
 }
 
 /*
-Add rewriteUserAgentHeader as a listener to onBeforeSendHeaders,
-only for the target page.
+Adicionar rewriteUserAgentHeader como um _listener_ para onBeforeSendHeaders,
+apenas para a página de destino.
 
-Make it "blocking" so we can modify the headers.
+Faça o _listener_ "blocking" para que possamos modificar os cabeçalhos.
 */
 browser.webRequest.onBeforeSendHeaders.addListener(rewriteUserAgentHeader,
                                           {urls: [targetPage]},
                                           ["blocking", "requestHeaders"]);
 
 /*
-Update ua to a new value, mapped from the uaString parameter.
+Atualize ua para um novo valor, mapeado a partir do parâmetro uaString.
 */
 function setUaString(uaString) {
   ua = uaStrings[uaString];

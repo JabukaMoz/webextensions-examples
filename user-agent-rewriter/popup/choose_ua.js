@@ -1,8 +1,8 @@
 
 /*
-If the user clicks on an element which has the class "ua-choice":
-* fetch the element's textContent: for example, "IE 11"
-* pass it into the background page's setUaString() function
+Se o usuário clicar em um elemento que tenha a classe "ua-choice":
+* Buscar textContent do elemento: por exemplo, "IE 11"
+* Passe para a função setUaString() da página de background
 */
 document.addEventListener("click", function(e) {
   if (!e.target.classList.contains("ua-choice")) {
