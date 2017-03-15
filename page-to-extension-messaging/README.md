@@ -1,15 +1,15 @@
 # page-to-extension-messaging
 
-## What it does
+## O que faz
 
-This extension includes a content script, which is injected only into: "https://mdn.github.io/webextensions-examples/content-script-page-script-messaging.html".
+Esta extensão inclui um script de conteúdo, que é injetado apenas em: "https://mdn.github.io/webextensions-examples/content-script-page-script-messaging.html".
 
-The content script listens for clicks on a particular button on the page. When the button is clicked, the content script sends a message to any scripts running in the page.
+O script de conteúdo atende a cliques em um botão específico na página. Quando o botão é clicado, o script de conteúdo envia uma mensagem para todos os scripts executados na página.
 
-Conversely, the content script listens for messages from the same window posted using window.postMessage. When the content script receives such a message, it displays an alert.
+Por outro lado, o script de conteúdo escuta as mensagens da mesma janela postada usando window.postMessage. Quando o script de conteúdo recebe essa mensagem, ele exibe um alerta.
 
-To test it out, visit https://mdn.github.io/webextensions-examples/content-script-page-script-messaging.html and press the buttons. One button sends a message from the page script to the content script, the other button sends a message in the other direction.
+Para testá-lo, acesse https://mdn.github.io/webextensions-examples/content-script-page-script-messaging.html e pressione os botões. Um botão envia uma mensagem do script de página para o script de conteúdo, o outro botão envia uma mensagem na outra direção.
 
-## What it shows
+## O que ele mostra
 
-How to exchange messages between an extension's content scripts, and scripts running in a web page.
+Como trocar mensagens entre scripts de conteúdo de uma extensão e scripts em uma página da Web.

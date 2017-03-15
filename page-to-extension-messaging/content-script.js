@@ -1,28 +1,28 @@
 /*
-Listen for messages from the page.
-If the message was from the page script, show an alert.
+Ouça as mensagens da página.
+Se a mensagem foi a partir do script de página, mostre um alerta.
 */
 window.addEventListener("message", function(event) {
   if (event.source == window &&
       event.data.direction &&
       event.data.direction == "from-page-script") {
-    alert("Content script received message: \"" + event.data.message + "\"");
+    alert("Mensagem recebida do script de conteúdo: \"" + event.data.message + "\"");
   }
 });
 
 /*
-Send a message to the page script.
+Enviar uma mensagem para o script da página.
 */
 function messagePageScript() {
   window.postMessage({
     direction: "from-content-script",
-    message: "Message from the content script"
+    message: "Mensagem do script de conteúdo"
   }, "https://mdn.github.io");
 }
 
 /*
-Add messagePageScript() as a listener to click events on
-the "from-content-script" element.
+Adicione messagePageScript() como um _listener_ para clicar em eventos em
+O elemento "from-content-script".
 */
 var fromContentScript = document.getElementById("from-content-script");
 fromContentScript.addEventListener("click", messagePageScript);
