@@ -1,4 +1,4 @@
 /*
-Just draw a border round the document.body.
+Apenas coloque uma borda em document.body.
 */
 document.body.style.border = "5px solid red";

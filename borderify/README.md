@@ -1,16 +1,16 @@
 # borderify
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+**Esse Addon injeta JS na página. O domínio `addons.mozilla.org` não permite este tipo de operação, então esse Addon não irá funcionar em `addons.mozilla.org` .**
 
-## What it does
+## O que faz
 
-This extension just includes:
+Esta extensão inclui:
 
-* a content script, "borderify.js", that is injected into any pages
-under "mozilla.org/" or any of its subdomains
+* Um script de conteúdo, "borderify.js", que é injetado em qualquer página
+Sob "mozilla.org/" ou qualquer um de seus subdomínios
 
-The content script draws a border around the document.body.
+O script de conteúdo desenha uma borda ao redor do documento.
 
-## What it shows
+## O que ele mostra
 
-* how to inject content scripts declaratively using manifest.json
+* Como injetar scripts de conteúdo declarativamente usando manifest.json
