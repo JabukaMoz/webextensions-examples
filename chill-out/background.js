@@ -1,18 +1,18 @@
 /*
-DELAY is set to 6 seconds in this example. Such a short period is chosen to make
-the extension's behavior more obvious, but this is not recommended in real life.
-Note that in Chrome, alarms cannot be set for less than a minute. In Chrome:
+DELAY é definido como 6 segundos neste exemplo. Um período tão curto foi escolhido para mostrar o comportamento da extenção mais facilmente, porém isso não é recomendado na vida real.
 
-* if you install this extension "unpacked", you'll see a warning
-in the console, but the alarm will still go off after 6 seconds
-* if you package the extension and install it, then the alarm will go off after
-a minute.
+Note que no Chrome, os alarmes não podem ser definidos com intervalos menores que um minuto. No Chrome:
+
+* Se instalar esta extensão "descompactada", verá um aviso
+no console, mas o alarme continuará disparando após 6 segundos
+* Se você compactar a extensão e instalá-la, então o alarme será disparado após
+um minuto.
 */
 var DELAY = 0.1;
 var CATGIFS = "http://chilloutandwatchsomecatgifs.com/";
 
 /*
-Restart alarm for the currently active tab, whenever background.js is run.
+Reinicie o alarme da guia ativa atualmente, sempre que background.js for executado.
 */
 var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
 gettingActiveTab.then((tabs) => {
@@ -20,7 +20,7 @@ gettingActiveTab.then((tabs) => {
 });
 
 /*
-Restart alarm for the currently active tab, whenever the user navigates.
+Reinicie o alarme da guia atualmente ativa, sempre que o usuário navegar.
 */
 browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (!changeInfo.url) {
@@ -35,15 +35,15 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 });
 
 /*
-Restart alarm for the currently active tab, whenever a new tab becomes active.
+Reinicie o alarme da guia ativa atualmente, sempre que uma nova guia se tornar ativa.
 */
 browser.tabs.onActivated.addListener((activeInfo) => {
   restartAlarm(activeInfo.tabId);
 });
 
 /*
-restartAlarm: clear all alarms,
-then set a new alarm for the given tab.
+RestartAlarm: limpa todos os alarmes,
+Em seguida, define um novo alarme para a guia fornecida.
 */
 function restartAlarm(tabId) {
   browser.pageAction.hide(tabId);
@@ -57,7 +57,7 @@ function restartAlarm(tabId) {
 }
 
 /*
-On alarm, show the page action.
+Quando o alarme disparar, mostra a ação da página
 */
 browser.alarms.onAlarm.addListener((alarm) => {
   var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
@@ -67,7 +67,7 @@ browser.alarms.onAlarm.addListener((alarm) => {
 });
 
 /*
-On page action click, navigate the corresponding tab to the cat gifs.
+Quando clicar na ação da página, navegue para a página com as gifs de gatinhos
 */
 browser.pageAction.onClicked.addListener(function () {
   browser.tabs.update({url: CATGIFS});

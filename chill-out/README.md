@@ -1,26 +1,24 @@
 # chill-out
 
-## What it does
+## O que faz
 
-After N seconds of inactivity (defined as the user not having navigated
-or switched away from the active tab) display a
-[page action](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/pageAction)
-for that tab.
+Após N segundos de inatividade (que significa que o usuário não navegou ou trocou a guia ativa) exibe uma
+[ação de página](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/pageAction) para essa guia.
 
-When the user clicks the page action,
-navigate to http://chilloutandwatchsomecatgifs.com/.
+Quando o usuário clica na ação de página,
+Navegue para http://chilloutandwatchsomecatgifs.com/.
 
-"N" is set to 6 seconds in this example. Such a short period is chosen to make
-the extension's behavior more obvious, but this is not recommended in real life.
-Note that in Chrome, alarms cannot be set for less than a minute. In Chrome:
+"N" é definido como 6 segundos neste exemplo. Um período tão curto foi escolhido para mostrar o comportamento da extenção mais facilmente, porém isso não é recomendado na vida real.
 
-* if you install this extension "unpacked", you'll see a warning
-in the console, but the alarm will still go off after 6 seconds
-* if you package the extension and install it, then the alarm will go off after
-a minute.
+Note que no Chrome, os alarmes não podem ser definidos com intervalos menores que um minuto. No Chrome:
 
-## What it shows
+* Se instalar esta extensão "descompactada", verá um aviso
+no console, mas o alarme continuará disparando após 6 segundos
+* Se você compactar a extensão e instalá-la, então o alarme será disparado após
+um minuto.
 
-* how to use various `tabs` functions
-* how to show/hide a page action
-* how to set alarms and handle alarms going off
+## O que ele mostra
+
+* Como usar várias funções de `tabs`
+* Como mostrar / ocultar uma ação de página
+* Como definir alarmes e lidar com alarmes disparando
