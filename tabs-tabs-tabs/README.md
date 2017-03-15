@@ -1,11 +1,10 @@
 # tabs, tabs, tabs
+## O que faz
 
-## What it does
+Esta extensão inclui uma ação do navegador com um popup especificado como "tabs.html".
 
-This extension includes a browser action with a popup specified as "tabs.html".
+O pop-up permite ao usuário executar várias operações simples usando a tabs API.
 
-The popup lets the user perform various simple operations using the tabs API.
+# O que mostra
 
-# What it shows
-
-Demonstration of various tabs API functions.
+Demonstração de várias funções da tabs API.

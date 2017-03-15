@@ -1,4 +1,4 @@
-// Zoom constants. Define Max, Min, increment and default values
+// constantes de Zoom. Definir valores máximos, mínimos, de incremento e padrão
 const ZOOM_INCREMENT = 0.2;
 const MAX_ZOOM = 3;
 const MIN_ZOOM = 0.3;
@@ -13,7 +13,7 @@ function firstUnpinnedTab(tabs) {
 }
 
 /**
- * listTabs to switch to
+ * lista as guias
  */
 function listTabs() {
   getCurrentWindowTabs().then((tabs) => {
@@ -116,13 +116,13 @@ document.addEventListener("click", function(e) {
     callOnActiveTab((tab) => {
       var gettingZoom = browser.tabs.getZoom(tab.id);
       gettingZoom.then((zoomFactor) => {
-        //the maximum zoomFactor is 3, it can't go higher
+        //O zoomFactor máximo é 3, ele não pode ir mais alto
         if (zoomFactor >= MAX_ZOOM) {
           alert("Tab zoom factor is already at max!");
         } else {
           var newZoomFactor = zoomFactor + ZOOM_INCREMENT;
-          //if the newZoomFactor is set to higher than the max accepted
-          //it won't change, and will never alert that it's at maximum
+           // se o novo ZoomFactor for definido como mais alto do que o máximo aceito
+           // não vai mudar, e nunca vai alertar que está no máximo
           newZoomFactor = newZoomFactor > MAX_ZOOM ? MAX_ZOOM : newZoomFactor;
           browser.tabs.setZoom(tab.id, newZoomFactor);
         }
@@ -134,13 +134,13 @@ document.addEventListener("click", function(e) {
     callOnActiveTab((tab) => {
       var gettingZoom = browser.tabs.getZoom(tab.id);
       gettingZoom.then((zoomFactor) => {
-        //the minimum zoomFactor is 0.3, it can't go lower
+        //O zoomFactor mínimo é 0.3, não pode ir mais baixo
         if (zoomFactor <= MIN_ZOOM) {
           alert("Tab zoom factor is already at minimum!");
         } else {
           var newZoomFactor = zoomFactor - ZOOM_INCREMENT;
-          //if the newZoomFactor is set to lower than the min accepted
-          //it won't change, and will never alert that it's at minimum
+            // se o novo ZoomFactor for definido como menor que o min aceito
+           // não vai mudar, e nunca vai alertar que é no mínimo
           newZoomFactor = newZoomFactor < MIN_ZOOM ? MIN_ZOOM : newZoomFactor;
           browser.tabs.setZoom(tab.id, newZoomFactor);
         }
@@ -160,8 +160,8 @@ document.addEventListener("click", function(e) {
       });
     });
   }
-  // Currently (11/2/2016) only supported by Chrome
-  else if (e.target.id === "tabs-highlight") { // highlights current tab and next tab (cycles back to first tab if current tab is the last one)
+  // Atualmente (11/2/2016) disponível somente no Chrome
+  else if (e.target.id === "tabs-highlight") { // Destaca a guia atual ea próxima guia (cicla para a primeira guia se a guia atual for a última)
     callOnActiveTab((tab, tabs) => {
       next = (tab.index+1) % tabs.length;
       browser.tabs.highlight({tabs:[tab.index, next]});
@@ -187,7 +187,7 @@ document.addEventListener("click", function(e) {
   e.preventDefault();
 });
 
-//onRemoved listener. fired when tab is removed
+//onRemoved listener. disparado quando a guia é removida
 browser.tabs.onRemoved.addListener(function(tabId, removeInfo){
   console.log(`The tab with id: ${tabId}, is closing`);
 
@@ -198,7 +198,7 @@ browser.tabs.onRemoved.addListener(function(tabId, removeInfo){
   }
 });
 
-//onMoved listener. fired when tab is moved into the same window
+//onMoved listener. disparado quando movemos a guia na mesma janela
 browser.tabs.onMoved.addListener(function(tabId, moveInfo){
   var startIndex = moveInfo.fromIndex;
   var endIndex = moveInfo.toIndex;
