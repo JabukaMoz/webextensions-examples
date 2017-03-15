@@ -1,20 +1,20 @@
 # Quicknote
-A persistent note/to-do list application — click a button in your browser and record notes, which will persist even after browser restarts.
+Um aplicativo de lista persistente de nota / lista de tarefas - clique em um botão no navegador e registre notas, que persistirão mesmo após o reinício do navegador.
 
-Works in Firefox 47+, and will also work as a Chrome extension, out of the box.
+Funciona no Firefox 47+, e também funciona como uma extensão do Chrome.
 
-## What it does
+## O que faz
 
-This extension includes:
+Esta extensão inclui:
 
-* A browser action that creates a popup — within the popup is:
-	* Two form elements for entering title and body text for a new note, along with a button to add a note, and a button to clear all notes.
-	* A list of the notes that have been added to the extension — each note includes a delete button to delete just that note. You can also click on the note title and body to edit them. In edit mode, each note includes:
-		* An update button to submit an update.
-		* A cancel button to cancel the update.
-		
-Quicknote uses the WebExtensions [Storage API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/storage) to persist the notes.
+* Uma ação do navegador que cria um popup - dentro do popup é:
+* Dois elementos de formulário para inserir o texto do título e do corpo para uma nova nota, juntamente com um botão para adicionar uma nota e um botão para limpar todas as notas.
+* Uma lista das notas que foram adicionadas à extensão - cada nota inclui um botão de exclusão para excluir apenas essa nota. Você também pode clicar no título da nota e no corpo para editá-los. No modo de edição, cada nota inclui:
+* Um botão de atualização para enviar uma atualização.
+* Um botão cancelar para cancelar a atualização.
 
-## What it shows
+O Quicknote usa o WebExtensions [API de armazenamento](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/storage) para manter as notas.
 
-* How to persist data in a WebExtension using the Storage API.
+## O que ele mostra
+
+Como persistir dados em um WebExtension usando a API de armazenamento.

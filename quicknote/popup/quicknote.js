@@ -1,4 +1,4 @@
-/* initialise variables */
+/* inicializa variáveis */
 
 var inputTitle = document.querySelector('.new-note input');
 var inputBody = document.querySelector('.new-note textarea');
@@ -9,7 +9,7 @@ var noteContainer = document.querySelector('.note-container');
 var clearBtn = document.querySelector('.clear');
 var addBtn = document.querySelector('.add');
 
-/*  add event listeners to buttons */
+/*  adiciona event listeners aos botões */
 
 addBtn.addEventListener('click', addNote);
 clearBtn.addEventListener('click', clearAll);
@@ -19,7 +19,7 @@ function onError(error) {
   console.log(error);
 }
 
-/* display previously-saved stored notes on startup */
+/* mostra notas salvas ao inicializar */
 
 initialize();
 
@@ -34,7 +34,7 @@ function initialize() {
   }, onError);
 }
 
-/* Add a note to the display, and storage */
+/* Adiciona uma nota no armazenamento e mostra */
 
 function addNote() {
   var noteTitle = inputTitle.value;
@@ -50,7 +50,7 @@ function addNote() {
   }, onError);
 }
 
-/* function to store a new note in storage */
+/* função para guardar uma nota no armazenamento */
 
 function storeNote(title, body) {
   var storingNote = browser.storage.local.set({ [title] : body });
@@ -59,7 +59,7 @@ function storeNote(title, body) {
   }, onError);
 }
 
-/* function to display a note in the note box */
+/* função para mostrar uma nota na caixa de notas */
 
 function displayNote(title, body) {
 
@@ -86,7 +86,7 @@ function displayNote(title, body) {
 
   note.appendChild(noteDisplay);
 
-  /* set up listener for the delete functionality */
+  /* adiciona um _listener_ para a funcionalidade de remoção */
 
   deleteBtn.addEventListener('click',function(e){
     evtTgt = e.target;
@@ -94,7 +94,7 @@ function displayNote(title, body) {
     browser.storage.local.remove(title);
   })
 
-  /* create note edit box */
+  /* cria caixa de edição das notas */
   var noteEdit = document.createElement('div');
   var noteTitleEdit = document.createElement('input');
   var noteBodyEdit = document.createElement('textarea');
@@ -123,7 +123,7 @@ function displayNote(title, body) {
   noteContainer.appendChild(note);
   noteEdit.style.display = 'none';
 
-  /* set up listeners for the update functionality */
+  /* cria _listeners_ para a função de atualização */
 
   noteH.addEventListener('click',function(){
     noteDisplay.style.display = 'none';
@@ -151,7 +151,7 @@ function displayNote(title, body) {
 }
 
 
-/* function to update notes */
+/* função de atualização das notas */
 
 function updateNote(delNote,newTitle,newBody) {
   var storingNote = browser.storage.local.set({ [newTitle] : newBody });
@@ -167,7 +167,7 @@ function updateNote(delNote,newTitle,newBody) {
   }, onError);
 }
 
-/* Clear all notes from the display/storage */
+/* Remove todas as notas do armazenamento e da tela */
 
 function clearAll() {
   while (noteContainer.firstChild) {
