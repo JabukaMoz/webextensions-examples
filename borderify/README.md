@@ -1,6 +1,6 @@
 # borderify
 
-**Esse Addon injeta JS na página. O domínio `addons.mozilla.org` não permite este tipo de operação, então esse Addon não irá funcionar em `addons.mozilla.org` .**
+**Esse Addon injeta CSS na página. O domínio `addons.mozilla.org` não permite este tipo de operação, então esse Addon não irá funcionar em `addons.mozilla.org` .**
 
 ## O que faz
 
