@@ -1,11 +1,11 @@
 # Window manipulator
 
-## What it does
+## O que faz
 
-This extension includes a browser action with a popup specified as "window.html".
+Esta extensão inclui uma ação do navegador com um popup especificado como "window.html".
 
-The popup lets the user perform various simple operations using the windows API.
+O pop-up permite ao usuário executar várias operações simples usando a API do Windows.
 
-# What it shows
+# O que mostra
 
-Demonstration of various windows API functions.
+Demonstração de várias funções da API do Windows.

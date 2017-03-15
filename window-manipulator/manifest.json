@@ -12,7 +12,7 @@
     "48": "icons/window.png",
     "96": "icons/window@2x.png"
   },
-  "description": "A list of methods you can perform on a window.",
+  "description": "Uma lista de métodos que você pode executar em uma janela.",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/window-manipulator",
   "manifest_version": 2,
   "name": "Window manipulator",
