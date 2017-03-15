@@ -1,16 +1,16 @@
 # open-my-page
 
-## What it does
+## O que faz
 
-This extension includes:
+Esta extensão inclui:
 
-* a background script, "background.js"
-* a browser action
-* a page "my-page.html"
+* Um script de fundo, "background.js"
+* Uma ação do navegador
+* Uma página "my-page.html"
 
-All it does is: when the user clicks the button, open "my-page.html" in a new tab.
+Tudo o que faz é: quando o usuário clica no botão, abra "my-page.html" em uma nova guia.
 
-## What it shows
+## O que ele mostra
 
-* how to listen for browser action clicks in a background script
-* how to open a page packaged with your extension
+* Como ouvir os cliques da ação do navegador em um script de plano de fundo
+* Como abrir uma página empacotada com sua extensão

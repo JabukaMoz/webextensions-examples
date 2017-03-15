@@ -1,5 +1,5 @@
 /*
-Open a new tab, and load "my-page.html" into it.
+Abra uma nova guia e carregue "my-page.html" nele.
 */
 function openMyPage() {
   console.log("injecting");
@@ -10,7 +10,7 @@ function openMyPage() {
 
 
 /*
-Add openMyPage() as a listener to clicks on the browser action.
+Adicione openMyPage() como um _listener_ aos cliques na ação do navegador.
 */
 browser.browserAction.onClicked.addListener(openMyPage);
  

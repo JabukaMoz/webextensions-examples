@@ -1,6 +1,6 @@
 {
 
-  "description": "Adds browser action icon to toolbar to open packaged web page. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#open-my-page-button",
+  "description": "Adiciona o ícone de ação do navegador à barra de ferramentas para abrir a página da Web empacotada. Ver https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#open-my-page-button",
   "manifest_version": 2,
   "name": "open-my-page",
   "version": "1.0",
