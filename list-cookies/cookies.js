@@ -1,19 +1,19 @@
 function showCookiesForTab(tabs) {
-  //get the first tab object in the array
+  // obter o primeiro objeto de Aba/guia
   tab = tabs.pop();
 
-  //get all cookies in the domain
+  // pegar todos os cookies para o dominio
   var gettingAllCookies = browser.cookies.getAll({url: tab.url});
   gettingAllCookies.then((cookies) => {
 
-    //set the header of the panel
+    // configurar o cabeçalho do painel
     var activeTabUrl = document.getElementById('header-title');
     var text = document.createTextNode("Cookies at: "+tab.title);
     var cookieList = document.getElementById('cookie-list');
     activeTabUrl.appendChild(text);
 
     if (cookies.length > 0) {
-      //add an <li> item with the name and value of the cookie to the list
+      //adicionar um <li> com o nome e o valor do cookie para a lista
       for (cookie of cookies) {
         var li = document.createElement("li");
         var content = document.createTextNode(cookie.name + ": "+ cookie.value);
@@ -31,8 +31,8 @@ function showCookiesForTab(tabs) {
   });
 };
 
-//get active tab to run an callback function.
-//it sends to our callback an array of tab objects
+// obter guia ativa para executar uma função de retorno de chamada.
+// envia para o nosso callback uma matriz de objetos de tabulação
 function getActiveTab() {
   return browser.tabs.query({currentWindow: true, active: true});
 }

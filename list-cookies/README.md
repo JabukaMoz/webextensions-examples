@@ -1,9 +1,8 @@
 # list-cookies
+## O que faz
 
-## What it does
+Essas extensões listam os cookies na guia ativa.
 
-This extensions list the cookies in the active tab.
+# O que mostra
 
-# What it shows
-
-Demonstration of the getAll() function in the cookie API
+Demonstração da função getAll () na API do cookie
