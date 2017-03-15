@@ -1,6 +1,6 @@
 {
   "name": "Firefox Code Search",
-  "description" : "To use, type 'cs' plus a search term into the url bar.",
+  "description" : "Para usar digite 'cs' e um termo de pesquisa na barra de endereços URL.",
   "version": "1.0",
   "applications": {
     "gecko": {

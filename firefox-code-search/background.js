@@ -2,13 +2,13 @@ const BASE_URL = "https://searchfox.org/mozilla-central";
 const SEARCH_URL = `${BASE_URL}/search`;
 const SOURCE_URL = `${BASE_URL}/source`;
 
-// Provide help text to the user.
+// Forneça texto de ajuda ao usuário.
 browser.omnibox.setDefaultSuggestion({
   description: `Search the firefox codebase
     (e.g. "hello world" | "path:omnibox.js onInputChanged")`
 });
 
-// Update the suggestions whenever the input is changed.
+// Atualize as sugestões sempre que a entrada for alterada.
 browser.omnibox.onInputChanged.addListener((text, addSuggestions) => {
   let headers = new Headers({"Accept": "application/json"});
   let init = {method: 'GET', headers};
@@ -20,11 +20,11 @@ browser.omnibox.onInputChanged.addListener((text, addSuggestions) => {
     .then(addSuggestions);
 });
 
-// Open the page based on how the user clicks on a suggestion.
+// Abra a página com base em como o usuário clica em uma sugestão.
 browser.omnibox.onInputEntered.addListener((text, disposition) => {
   let url = text;
   if (!text.startsWith(SOURCE_URL)) {
-    // Update the url if the user clicks on the default suggestion.
+    // Atualize o URL se o usuário clicar na sugestão padrão.
     url = `${SEARCH_URL}?q=${text}`;
   }
   switch (disposition) {
@@ -87,7 +87,7 @@ function createSuggestionsFromResponse(response) {
         return resolve(suggestions);
       }
 
-      // There won't be any textual occurrences if the "path:" prefix is used.
+      // Não haverá ocorrências de texto se o prefixo "path:" for usado.
       files.forEach(({path}) => {
         suggestions.push({
           content: `${SOURCE_URL}/${path}`,

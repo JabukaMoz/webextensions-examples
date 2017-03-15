@@ -1,13 +1,13 @@
 # firefox-code-search
 
-## What it does
+## O que faz
 
-This extension allows you to search the Firefox codebase using the awesome bar.
+Esta extensão permite pesquisar a o código fonte do Firefox usando a _awesome bar_.
 
-To test it out, type 'cs' into the awesome bar followed by a search string (e.g. `cs hello world`). The results will be shown as suggestions, and clicking on a suggestion will navigate to the file where the result was found.
+Para testá-lo, digite 'cs' na _awesome bar_ seguida de uma seqüência de pesquisa (por exemplo, `cs hello world`). Os resultados serão mostrados como sugestões. Ao clicar em uma sugestão, você irá navegar até o arquivo onde o resultado foi encontrado.
 
-To search a specific file, use the "path:" prefix (e.g. `cs hello path:omnibox.js`)
+Para pesquisar um arquivo específico, use o prefixo "path:" (por exemplo, `cs hello path: omnibox.js`)
 
-## What it shows
+## O que ele mostra
 
-How to use the omnibox API to add custom suggestions to the awesome bar.
+Como usar a API omnibox para adicionar sugestões personalizadas à _awesome bar_.
