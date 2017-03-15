@@ -1,4 +1,4 @@
-// Get the saved stats and render the data in the popup window.
+// Obter as estatísticas guardadas e renderiza os dados na janela pop-up.
 var gettingStoredStats = browser.storage.local.get("hostNavigationStats");
 gettingStoredStats.then(results => {
   if (!results.hostNavigationStats) {

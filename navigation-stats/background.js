@@ -1,7 +1,7 @@
-// Load existent stats with the storage API.
+// Carregar estatísticas existentes com a API de armazenamento.
 var gettingStoredStats = browser.storage.local.get("hostNavigationStats");
 gettingStoredStats.then(results => {
-  // Initialize the saved stats if not yet initialized.
+  // Inicialize as estatísticas armazenadas se não tiver inicializado ainda.
   if (!results.hostNavigationStats) {
     results = {
       hostNavigationStats: {}
@@ -10,10 +10,10 @@ gettingStoredStats.then(results => {
 
   const {hostNavigationStats} = results;
 
-  // Monitor completed navigation events and update
-  // stats accordingly.
+   // Monitorar os eventos de navegação concluídos e atualizar
+   // as estatísticas se necessário.
   browser.webNavigation.onCompleted.addListener(evt => {
-    // Filter out any sub-frame related navigation event
+    // Descarte qualquer evento de navegação relacionado a uma sub-frame
     if (evt.frameId !== 0) {
       return;
     }
@@ -23,7 +23,7 @@ gettingStoredStats.then(results => {
     hostNavigationStats[url.hostname] = hostNavigationStats[url.hostname] || 0;
     hostNavigationStats[url.hostname]++;
 
-    // Persist the updated stats.
+    // Persistir as novas estatísticas .
     browser.storage.local.set(results);
   }, {
     url: [{schemes: ["http", "https"]}]});
