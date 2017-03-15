@@ -1,41 +1,38 @@
 # WebExtension Webpack Example
-A minimal example of how to use [webpack](https://webpack.github.io) to package
-[npm](https://npmjs.com) modules so they can be used in a WebExtension.
-The example package used by this extension is `left-pad`, an essential package
-in almost any situation.
+Um exemplo mínimo de como usar o [webpack](https://webpack.github.io) para empacotar módulos do
+[Npm](https://npmjs.com) para que eles possam ser usados ​​em uma WebExtension.
+O pacote de exemplo usado por esta extensão é `left-pad`.
 
-## What it does
-This example shows how to use a node module in a background and a content script.
-It defines two build targets in [webpack.config.js](webpack.config.js), they each
-generate a file that includes all modules used the entry point and store it in
-the [addon](addon/) folder. The first one starts with [background_scripts/background.js](background_scripts/background.js)
-and stores it in `addon/background_scripts/index.js`. The other one does the
-same for [popup/left-pad.js](popup/left-pad.js) and stores it in `addon/popup/index.js`.
+## O que faz
+Este exemplo mostra como usar um módulo de nodejs em backgrond e um script de conteúdo.
+Define dois destinos de compilação em [webpack.config.js](webpack.config.js), cada um deles
+gera um arquivo que inclue todos os módulos usados ​​no ponto de entrada e guarda esse arquivo na pasta [addon](addon/). O primeiro começa com [background_scripts/background.js](background_scripts/background.js)
+E guarda em `addon/background_scripts/index.js`. O outro faz o
+Mesmo para [popup/left-pad.js](popup/left-pad.js) e armazena-o em `addon/popup/index.js`.
 
-The extension includes a browser action with a popup, which provides an UI for
-running left-pad on a string with a chosen character. The operation can either be
-performed with the left-pad module included in the panel's script or in the
-background script.
+A extensão inclui uma ação do navegador com um pop-up que fornece uma interface
+executando left-pad em uma string com um caractere escolhido. A operação pode ser
+executada com o módulo incluído no popup ou no script de background.
 
-## What it could do
-This could be infinitely extended - injecting global jQuery, adding babel,
-react/jsx, css modules, image processing, local modules and so on.
+## O que poderia fazer
+Isso poderia ser infinitamente estendido - injetando jQuery global, adicionando babel,
+react / jsx, módulos css, processamento de imagem, módulos locais e assim por diante.
 
-## What it shows
+## O que ele mostra
 
- - How to use npm or custom modules in a WebExtension.
+ Como usar npm ou módulos personalizados em uma WebExtension.
 
-## How to build it
+## Como compilar
 
  - `npm install`
  - `npm run build`
 
-The WebExtension in the [addon](addon/) folder should now work.
+A WebExtension vai aparecer na pasta [addon](addon/).
 
-## What about Browserify?
-[Browserify](http://browserify.org/) works just as well as webpack for extensions. In the end it's a
-personal choice about your preferred tool.
+## E quanto a Browserify?
+[Browserify](http://browserify.org/) funciona tão bem quanto o webpack para extensões. No final, é uma
+escolha pessoal sobre a sua ferramenta preferida.
 
-## Live-development
-As well as watching the folder with your `manifest.json` in it, you will also
-have to run webpack in watch mode.
+## desenvolvimento em tempo real
+Além de observar a pasta com o seu `manifest.json`, você também
+tem que executar o webpack no modo de monitoramento.
