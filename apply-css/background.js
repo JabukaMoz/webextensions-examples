@@ -4,8 +4,8 @@ const TITLE_REMOVE = "Remove CSS";
 const APPLICABLE_PROTOCOLS = ["http:", "https:"];
 
 /*
-Toggle CSS: based on the current title, insert or remove the CSS.
-Update the page action's title and icon to reflect its state.
+Alternar CSS: dependendo do título atual, inserir ou remover o CSS.
+Atualizar o título da ação da página e o ícone para refletir o estado atual.
 */
 function toggleCSS(tab) {
 
@@ -26,7 +26,7 @@ function toggleCSS(tab) {
 }
 
 /*
-Returns true only if the URL's protocol is in APPLICABLE_PROTOCOLS.
+Retorna true somente se o protocolo da URL estiver em APPLICABLE_PROTOCOLS.
 */
 function protocolIsApplicable(url) {
   var anchor =  document.createElement('a');
@@ -35,8 +35,8 @@ function protocolIsApplicable(url) {
 }
 
 /*
-Initialize the page action: set icon and title, then show.
-Only operates on tabs whose URL's protocol is applicable.
+Inicialize a ação da página: defina o ícone e o título, depois mostre.
+Só funciona em guias cujo protocolo de URL é aplicável.
 */
 function initializePageAction(tab) {
   if (protocolIsApplicable(tab.url)) {
@@ -47,7 +47,7 @@ function initializePageAction(tab) {
 }
 
 /*
-When first loaded, initialize the page action for all tabs.
+Quando carregado pela primeira vez, inicializa a ação da página para todas as guias.
 */
 var gettingAllTabs = browser.tabs.query({});
 gettingAllTabs.then((tabs) => {
@@ -57,13 +57,13 @@ gettingAllTabs.then((tabs) => {
 });
 
 /*
-Each time a tab is updated, reset the page action for that tab.
+Cada vez que uma guia é atualizada, redefina a ação da página para essa guia.
 */
 browser.tabs.onUpdated.addListener((id, changeInfo, tab) => {
   initializePageAction(tab);
 });
 
 /*
-Toggle CSS when the page action is clicked.
+Alternar CSS quando a ação da página é clicada.
 */
 browser.pageAction.onClicked.addListener(toggleCSS);

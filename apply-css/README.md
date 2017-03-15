@@ -1,21 +1,20 @@
 # apply-css
 
-**This add-on injects CSS into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+**Esse Addon injeta CSS na p'agina. O domínio `addons.mozilla.org` não permite este tipo de operação, então esse Addon não irá funcionar em `addons.mozilla.org` .**
 
-## What it does
+## O que ele faz
 
-This extension includes:
+Essa WebExtension inclui:
 
-* a background script, "background.js"
-* a page action
+* um script de background, "background.js"
+* uma _page action_
 
-It adds the [page action](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/pageAction)
-to every tab the user opens. Clicking the page action
-for a tab applies some CSS using [tabs.insertCSS](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/insertCSS).
+Ele adiciona uma [page action](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/pageAction)
+para cada guia que o usuário abre. Clicar na _page action_ faz com que um CSS seja inserido com [tabs.insertCSS](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/insertCSS).
 
-Clicking again removes the CSS using [tabs.removeCSS](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/removeCSS).
+Clicar novamente remove o CSS usando [tabs.removeCSS](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/removeCSS).
 
-## What it shows
+## O que ele ensina
 
-* some basic page action functions
-* how to apply and remove CSS.
+* Umas _page actions_ básicas.
+* Como aplicar e remover CSS.
