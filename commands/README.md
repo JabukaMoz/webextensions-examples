@@ -1,13 +1,13 @@
 # commands
 
-This extension includes:
+Esta extensão inclui:
 
-* a background script, "background.js"
+* Um script de _background_, "background.js"
 
-All it does is:
+## O que ele faz:
 
-* register a shortcut (Ctrl+Shift+U) to send a command to the extension (Command+Shift+U on a Mac).",
+* Registrar um atalho (Ctrl + Shift + U) para enviar um comando para a extensão (Command + Shift + U em um Mac). ",
 
-It shows:
+## O que ele ensina:
 
-* how to use chrome.commands to register keyboard shortcuts for your extension.
+* Como usar chrome.commands para registrar atalhos de teclado para sua extensão.
