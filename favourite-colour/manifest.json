@@ -3,9 +3,9 @@
       "scripts": ["background.js"]
   },
   "browser_action": {
-      "default_title": "Favourite colour option"
+      "default_title": "Opção de cor favorita"
   },
-  "description": "An example options ui",
+  "description": "Um exemplo de UI de opções",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/favourite-colour",
   "manifest_version": 2,
   "name": "Favourite colour",
