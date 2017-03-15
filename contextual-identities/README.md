@@ -1,13 +1,13 @@
 # Contextual Identities
 
-## What it does
+## O que faz
 
-Lists existing identities, lets you create new tabs with an identity and remove all tabs from an identity. For more information on contextual identities: https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers
+Lista as identidades existentes, permite criar novas guias com uma identidade e remover todas as guias de uma identidade. Para obter mais informações sobre identidades contextuais: https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers
 
-## What it shows
+## O que ele mostra
 
-How to use the contextualIdentities API. Please note: you must have contextualIdentities enabled. You can do that by going to about:config and setting the `privacy.userContext.enabled` preference to true. If you are using web-ext you can do this by running:
+Como usar a API contextualIdentities. Observe: você deve ter contextualIdentities habilitado. Você pode fazer isso indo para about: config e definindo a preferência `privacy.userContext.enabled` para true. Se você estiver usando web-ext você pode fazer isso executando:
 
-web-ext run --pref privacy.userContext.enabled=true
+Web-ext run --pref privacy.userContext.enabled = true
 
 Icon from: https://www.iconfinder.com/icons/290119/card_id_identification_identity_profile_icon#size=128, License: "Free for commercial use".
