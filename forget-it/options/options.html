@@ -9,30 +9,30 @@
   <body>
 
     <section class="clear-options">
-      <span class="title">Time range to forget:</span>
+      <span class="title">Intervalo de tempo para esquecer:</span>
       <select id="since">
-        <option value="hour" selected>Last hour</option> 
-        <option value="day">Last day</option>
-        <option value="week">Last week</option>
-        <option value="forever">Forever</option>
+        <option value="hour" selected>Última hora</option> 
+        <option value="day">Último dia</option>
+        <option value="week">Última semana</option>
+        <option value="forever">Para sempre</option>
       </select>
     </section>
 
     <section class="clear-options data-types">
-      <div class="title" >Type of data to forget:</div>
+      <div class="title" >Tipos de dados para esquecer:</div>
 
       <label>Downloads<input type="checkbox" checked="true" data-type="downloads"/></label>
       <label>Cache<input type="checkbox" checked="true" data-type="cache"/></label>
-      <label>Passwords<input type="checkbox" data-type="passwords"/></label>
-      <label>History<input type="checkbox" checked="true" data-type="history"/></label>
-      <label>Plugin data<input type="checkbox" data-type="pluginData"/></label>
-      <label>Form data<input type="checkbox" data-type="formData"/></label>
+      <label>Senhas<input type="checkbox" data-type="passwords"/></label>
+      <label>Histórico<input type="checkbox" checked="true" data-type="history"/></label>
+      <label>Dados de Plugin<input type="checkbox" data-type="pluginData"/></label>
+      <label>Dados de formulários<input type="checkbox" data-type="formData"/></label>
       <label>Cookies<input type="checkbox" data-type="cookies"/></label>
       <label>Service workers<input type="checkbox" data-type="serviceWorkers"/></label>
 
     </section>
 
-    <input type="button" value="Save preferences" id="save-button"/>
+    <input type="button" value="Salvar preferências" id="save-button"/>
 
     <script src="options.js"></script>
   </body>

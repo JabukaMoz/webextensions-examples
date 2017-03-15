@@ -1,5 +1,5 @@
 /*
-Default settings. If there is nothing in storage, use these values.
+Configurações padrão. Se não houver nada no armazenamento, use esses valores.
 */
 var defaultSettings = {
   since: "hour",
@@ -7,15 +7,15 @@ var defaultSettings = {
 };
 
 /*
-Generic error logger.
+Log de erro genérico.
 */
 function onError(e) {
   console.error(e);
 }
 
 /*
-On startup, check whether we have stored settings.
-If we don't, then store the default settings.
+Na inicialização, verifique se temos configurações armazenadas.
+Se não possuirmos, armazene as configurações padrão.
 */
 function checkStoredSettings(storedSettings) {
   if (!storedSettings.since || !storedSettings.dataTypes) {
@@ -27,15 +27,15 @@ const gettingStoredSettings = browser.storage.local.get();
 gettingStoredSettings.then(checkStoredSettings, onError);
 
 /*
-Forget browsing data, according to the settings passed in as storedSettings
-or, if this is empty, according to the default settings.
+Esqueça os dados de navegação, de acordo com as configurações passadas como storedSettings
+Ou, se este estiver vazio, de acordo com as configurações padrão.
 */
 function forget(storedSettings) {
 
   /*
-  Convert from a string to a time.
-  The string is one of: "hour", "day", "week", "forever".
-  The time is given in milliseconds since the epoch.
+  Converter de uma seqüência de caracteres para um tempo.
+   A string é uma das seguintes: "hora", "dia", "semana", "para sempre".
+   O tempo é dado em milissegundos desde a época.
   */
   function getSince(selectedSince) {
     if (selectedSince === "forever") {
@@ -53,8 +53,8 @@ function forget(storedSettings) {
   }
 
   /*
-  Convert from an array of strings, representing data types,
-  to an object suitable for passing into browsingData.remove().
+  Converter de uma matriz de strings, representando tipos de dados,
+   em um objeto adequado para passar para browsingData.remove().
   */
   function getTypes(selectedTypes) {
     let dataTypes = {};
@@ -72,8 +72,8 @@ function forget(storedSettings) {
     let sinceString = new Date(since).toLocaleString();
     browser.notifications.create({
       "type": "basic",
-      "title": "Removed browsing data",
-      "message": `Removed ${dataTypesString}\nsince ${sinceString}`
+      "title": "Dados de navegação removidos",
+      "message": `Removemos ${dataTypesString}\ndesde ${sinceString}`
     });
   }
 
@@ -81,7 +81,7 @@ function forget(storedSettings) {
 }
 
 /*
-On click, fetch stored settings and forget browsing data.
+Ao clicar, obtenha as configurações armazenadas e esqueça os dados de navegação.
 */
 browser.browserAction.onClicked.addListener(() => {
   const gettingStoredSettings = browser.storage.local.get();
