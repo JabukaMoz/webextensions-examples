@@ -1,11 +1,11 @@
 # History deleter
 
-## What it does
+## O que faz
 
-This extension includes a page action with a popup specified as "history.html". The page action will not appear on about:... pages.
+Esta extensão inclui uma ação de página com um popup especificado como "history.html". A ação de página não aparecerá em: ... páginas.
 
-The popup shows a list of 5 history entries for the current domain. It provides a clear button to delete all entries for that domain.
+O pop-up mostra uma lista de 5 entradas de histórico para o domínio atual. Ele fornece um botão claro para excluir todas as entradas desse domínio.
 
-## What it shows
+## O que ele mostra
 
-How to use the history API.
+Como usar a API de histórico.

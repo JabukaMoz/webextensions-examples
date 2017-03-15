@@ -2,7 +2,7 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "description": "Gives a popup to list and delete history on a domain.",
+  "description": "Fornece um pop-up para listar e excluir o histórico em um domínio.",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/history-deleter",
   "page_action": {
     "default_title": "History deleter",

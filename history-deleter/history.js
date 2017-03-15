@@ -1,4 +1,4 @@
-// A useful way to extract the domain from a url.
+// Uma maneira útil de extrair o domínio de url.
 function get_hostname(url) {
   var a = document.createElement('a');
   a.href = url;
@@ -24,17 +24,17 @@ function getActiveTab() {
   return browser.tabs.query({active: true, currentWindow: true});
 }
 
-// When the page is loaded find the current tab and then use that to query
-// the history.
+// Quando a página é carregada, localize a guia atual e use-a para consultar
+// o histórico.
 getActiveTab().then((tabs) => {
   var list = document.getElementById('history');
   var hostname = get_hostname(tabs[0].url);
 
-  // Search for all history entries for the current windows domain.
-  // Because this could be a lot of entries, lets limit it to 5.
+   // Pesquisar todas as entradas no histórico para o domínio da janela atual.
+   // Vamos limitar a 5 itens para não ficar demais...
   var searchingHistory = browser.history.search({text: hostname, maxResults: 5});
   searchingHistory.then((results) => {
-    // What to show if there are no results.
+    //O que mostrar se não tiver nenhum resultado.
     if (results.length < 1) {
       no_history(hostname);
     } else {
@@ -57,18 +57,18 @@ function clearAll(e) {
   getActiveTab().then((tabs) => {
     var hostname = get_hostname(tabs[0].url);
     if (!hostname) {
-      // Don't try and delete history when there's no hostname.
+      // Não tente excluir o histórico quando não houver nenhum hostname.
       return;
     }
 
-    // Search will return us a list of histories for this domain.
-    // Loop through them and delete them one by one.
+     // A busca retornará uma lista de itens do histórico para este domínio.
+     // Vamos excluir um por um usando um loop.
     var searchingHistory = browser.history.search({text: hostname})
     searchingHistory.then((results) => {
         for (k = 0; k < results.length; k++) {
           browser.history.deleteUrl({url: results[k].url});
         }
-        // Clear out the UI.
+        // Limpa a UI.
         no_history(hostname);
       }
     );
