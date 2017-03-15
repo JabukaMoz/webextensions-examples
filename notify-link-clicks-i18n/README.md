@@ -1,27 +1,26 @@
 # notify-link-clicks-i18n
+**Este complemento injeta JavaScript em páginas da web. O domínio `addons.mozilla.org` não permite esta operação, por isso este complemento não funciona correctamente quando é executado em páginas no domínio` addons.mozilla.org`.**
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+## O que faz
 
-## What it does
+Esta extensão inclui:
 
-This extension includes:
+* Um script de conteúdo, "content-script.js", que é injetado em todas as páginas
+* Um script de fundo, "background-script.js"
 
-* a content script, "content-script.js", that is injected into all pages
-* a background script, "background-script.js"
+O script de conteúdo atende aos cliques na página em que está anexado.
+Se um clique estiver em um link, o script de conteúdo enviará o link href
+Para o script de plano de fundo.
 
-The content script listens for clicks in the page it's attached to.
-If a click is on a link, the content script sends the link's href
-to the background script.
+O script de fundo escuta esta mensagem. Quando o script de fundo
+Recebe a mensagem, ele exibe uma notificação contendo o href.
 
-The background script listens for this message. When the background script
-receives the message, it displays a notification containing the href.
+O conteúdo da notificação, bem como o nome ea descrição da extensão,
+Localizada em alemão, holandês e japonês, bem como o padrão en-US.
 
-The notification's content, as well as the extension's name and description, are
-localized into German, Dutch, and Japanese, as well as the default en-US.
+# O que mostra
 
-# What it shows
-
-* how to inject content scripts declaratively using manifest.json
-* how to send messages from a content script to a background script
-* how to display system notifications using the notifications API
-* how to use the internationalization (i18n) system
+* Como injetar scripts de conteúdo declarativamente usando manifest.json
+* Como enviar mensagens de um script de conteúdo para um script em segundo plano
+* Como exibir notificações do sistema usando a API de notificações
+* Como usar o sistema de internacionalização (i18n)

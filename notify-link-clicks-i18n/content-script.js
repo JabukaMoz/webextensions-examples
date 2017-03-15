@@ -1,6 +1,6 @@
 /*
-If the click was on a link, send a message to the background page.
-The message contains the link's URL.
+Se o clique estava em um link, envie uma mensagem para a página de plano de fundo.
+A mensagem contém o URL do link.
 */
 function notifyExtension(e) {
   var target = e.target;
@@ -10,11 +10,11 @@ function notifyExtension(e) {
   if (target.tagName != "A")
     return;
 
-  console.log("content script sending message");
+  console.log("Script de conteúdo enviando mensagem");
   browser.runtime.sendMessage({"url": target.href});
 }
 
 /*
-Add notifyExtension() as a listener to click events.
+Adicione notifyExtension () como ouvinte para clicar em eventos.
 */
 window.addEventListener("click", notifyExtension);
