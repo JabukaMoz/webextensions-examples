@@ -1,5 +1,5 @@
-// This special eslint comment declares that the code below relies on
-// a named function in the global scope.
+// Este comentário eslint especial declara que o código abaixo se baseia em
+// uma função definida no escopo global.
 
 /* global getUsefulContents */
 function start() {

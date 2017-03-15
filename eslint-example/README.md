@@ -1,17 +1,16 @@
 # ESLint Example
 
-## What it shows
+## O que ele mostra
 
-This shows how to configure a WebExtension with
-[eslint](http://eslint.org/)
-to protect against
-writing JavaScript code that may be incompatible with modern versions of
-Firefox or Chrome.
+Mostra como configurar uma WebExtension com
+[Eslint](http://eslint.org/) e então se prevenir contra
+código JavaScript que pode ser incompatível com versões atuais do
+Firefox ou Chrome.
 
-## How to use it
+## Como usá-lo
 
-This requires [NodeJS](https://nodejs.org/en/) and [npm](http://npmjs.com/).
+O Addon precisa do [NodeJS](https://nodejs.org/en/) e [npm](http://npmjs.com/).
 
-* Change into the example directory and run `npm install` to install all
-  dependencies.
-* Execute `npm run lint` to view a report of any coding errors.
+* Mude para o diretório de exemplo e execute `npm install` para instalar todas
+as ependências.
+* Execute `npm run lint` para ver um relatório de quaisquer erros de codificação.

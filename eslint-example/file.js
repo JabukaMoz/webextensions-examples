@@ -1,5 +1,5 @@
-// This special eslint comment will declare that the named
-// function has been "exported" into the global scope.
+// Este comentário eslint especial declarará que o nome
+// função foi "exportada" para o escopo global.
 
 /* exported getUsefulContents */
 function getUsefulContents(callback) {
