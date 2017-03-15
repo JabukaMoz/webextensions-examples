@@ -1,9 +1,9 @@
 # Top Sites
 
-## What it does
+## O que faz
 
-This extension replaces the built-in page shown when the user opens a new tab without specifying a page to load (for example, when the user presses Ctrl+T). The replacement page is populated with links taken from the topSites API.
+Essa extensão substitui a página interna mostrada quando o usuário abre uma nova guia sem especificar uma página para carregar (por exemplo, quando o usuário pressiona Ctrl + T). A página de substituição é preenchida com links extraídos da API topSites.
 
-# What it shows
+# O que mostra
 
-How to use chrome_url_overrides and the topSites API.
+Como usar chrome_url_overrides e a API topSites.
