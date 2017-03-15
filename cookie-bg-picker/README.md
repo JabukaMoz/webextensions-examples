@@ -1,38 +1,38 @@
 # Cookie BG Picker
-A background customizer WebExtension — click a button in the browser UI and select from a range of background image tiles and colors to customize the look of any web page you are on.
+Um personalizador de papel de parede - clique em um botão na interface do usuário do navegador e selecione a partir de uma coleção de papeis de parede e cores para personalizar a aparência de qualquer página da web em que você se encontra.
 
-The WebExtension also uses cookies to save preferences for each site you customize, provided the cookie is able to be saved. On your return, your customizations will be remembered.
+A WebExtension também usa cookies para salvar preferências para cada site que você personalizar (desde que o cookie possa ser salvo). No seu retorno, suas personalizações serão lembradas.
 
-Works in Firefox 47+, and will also work as a Chrome extension, out of the box.
+Funciona no Firefox 47+, e também funciona como uma extensão do Chrome.
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+** Este complemento injeta JavaScript em páginas da web. O domínio `addons.mozilla.org` não permite esta operação, por isso este complemento não funciona correctamente quando é executado em páginas no domínio` addons.mozilla.org`. **
 
-## What it does
+## O que faz
 
-This extension includes:
+Esta extensão inclui:
 
-* A browser action that creates a popup — within the popup is:
-	* Several buttons to select different background images.
-	* A color picker input element to select a new background color.
-	* A reset button to remove any customizations that have been set.
-	* Functions to save customization preferences into cookies for each site visited and customized.
-	* Functions to send messages to the content script (see below) containing style information so that style customizations can be applied to the pages.
-* A background script to retrieve any cookies previously set by the WebExtension for each page visited, and if so send messages to the content script (see below) containing style information so that previously saved style customizations can be applied to pages as soon as they are visited in the browser. The background script also injects the content script into each page visited.
-* A content script that is injected into every page visited. Its function is to receive messages from the browser action and background scripts and apply the style information contained within to the current page.
+* Uma ação do navegador que cria um popup - dentro do popup é:
+* Vários botões para selecionar diferentes imagens de fundo.
+* Um elemento de entrada de selecionador de cores para selecionar uma nova cor de plano de fundo.
+* Um botão de reinicialização para remover quaisquer personalizações que foram definidas.
+* Funções para guardar preferências de personalização em cookies para cada site visitado e personalizado.
+* Funções para enviar mensagens para o script de conteúdo (veja abaixo) contendo informações de estilo para que as personalizações de estilo possam ser aplicadas às páginas.
+* Um script de fundo para recuperar quaisquer cookies previamente definidos pelo WebExtension para cada página visitada e, se assim, enviar mensagens para o script de conteúdo (veja abaixo) contendo informações de estilo para que as personalizações de estilo salvas anteriormente possam ser aplicadas às páginas assim que elas forem Visitado no navegador. O script de plano de fundo também injeta o script de conteúdo em cada página visitada.
+* Um script de conteúdo que é injetado em cada página visitada. Sua função é receber mensagens da ação do navegador e scripts de fundo e aplicar as informações de estilo contidas na página atual.
 
-		
-Cookie BG Picker uses the WebExtension:
 
-* [cookies API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/cookies) to save/retrieve/remove the cookies.
-* [tabs API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs) to retrieve information about the current tab (whenever a new URL is loaded and at each significant point thereafter), inject the content script into it, and to send messages between the browser action/background script and the content script.
-* [runtime API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime) to receive and handle messages sent to the content script.
+Cookie BG Picker usa as seguintes APIs de WebExtension:
 
-## What it shows
+* [Cookies API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/cookies) para salvar / recuperar / remover os cookies.
+* [Tabs API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs) para obter informações sobre a guia atual (sempre que uma nova URL é carregada e em cada ponto significativo depois disso ), Injetar o script de conteúdo nela e enviar mensagens entre o script de ação / fundo do navegador eo script de conteúdo.
+* [API de tempo de execução](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime) para receber e manipular mensagens enviadas para o script de conteúdo.
 
-* How to persist data via cookies using a WebExtension.
-* How to send messages between browser actions/background scripts and content scripts.
+## O que ele mostra
 
-## Acknowledgements
+* Como persistir dados através de cookies usando um WebExtension.
+* Como enviar mensagens entre as ações do navegador / scripts de fundo e scripts de conteúdo.
 
-* WebExtension icon courtesy of [icons8.com](http://icons8.com).
-* Transparent background images taken from [Transparent Textures](https://www.transparenttextures.com/).
+## Agradecimentos
+
+* WebExtension ícone cortesia de [icons8.com] (http://icons8.com).
+* Imagens transparentes de fundo tiradas de [Transparent Textures] (https://www.transparenttextures.com/).

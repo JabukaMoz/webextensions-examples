@@ -1,4 +1,4 @@
-/* Retrieve any previously set cookie and send to content script */
+/* Recuperar qualquer cookie previamente configurado e envia para o script de conteúdo */
 
 browser.tabs.onUpdated.addListener(cookieUpdate);
 
@@ -8,13 +8,13 @@ function getActiveTab() {
 
 function cookieUpdate(tabId, changeInfo, tab) {
   getActiveTab().then((tabs) => {
-    /* inject content script into current tab */
+    /* Injetar script de conteúdo na guia atual */
 
     browser.tabs.executeScript(null, {
       file: "/content_scripts/updatebg.js"
     });
 
-    // get any previously set cookie for the current tab 
+    // Obter qualquer cookie previamente configurado para a guia atual 
     var gettingCookies = browser.cookies.get({
       url: tabs[0].url,
       name: "bgpicker"

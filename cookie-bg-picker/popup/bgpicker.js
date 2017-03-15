@@ -1,4 +1,4 @@
-/* initialise variables */
+/* inicializa variáveis */
 
 var bgBtns = document.querySelectorAll('.bg-container button');
 var colorPick = document.querySelector('input');
@@ -10,8 +10,8 @@ function getActiveTab() {
   return browser.tabs.query({active: true, currentWindow: true});
 }
 
-/* apply backgrounds to buttons */
-/* add listener so that when clicked, button applies background to page HTML */
+/* aplica _background_ nos botões */
+/* adiciona um _listener_ que quando clicado aplica o _background_ no HTML */
 
 for(var i = 0; i < bgBtns.length; i++) {
   var imgName = bgBtns[i].getAttribute('class');
@@ -34,7 +34,7 @@ for(var i = 0; i < bgBtns.length; i++) {
   }
 }
 
-/* apply chosen color to HTML background */
+/* Aplica a cor escolhida no background do HTML */
 
 colorPick.onchange = function(e) {
   getActiveTab().then((tabs) => {
@@ -50,7 +50,7 @@ colorPick.onchange = function(e) {
   });
 }
 
-/* reset background */
+/* reseta o background */
 
 reset.onclick = function() {
   getActiveTab().then((tabs) => {
@@ -65,7 +65,7 @@ reset.onclick = function() {
   });
 }
 
-/* Report cookie changes to the console */
+/* Mostra mudanças de cookie no console */
 
 browser.cookies.onChanged.addListener((changeInfo) => {
   console.log(`Cookie changed:\n

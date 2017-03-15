@@ -4,7 +4,7 @@
   "name": "Cookie BG Picker",
   "version": "1.0",
 
-  "description": "Allows the user to customize the background color and pattern of their sites. Also saves their preferences via cookies where possible.",
+  "description": "Permite que o usuário personalize as cores e padrões de fundo de tela.",
   "icons": {
     "48": "icons/bgpicker-48.png"
   },
