@@ -1,16 +1,16 @@
 # latest-download
 
-## What it does ##
+## O que faz ##
 
-The extension includes a browser action with a popup.
+A extensão inclui uma ação do navegador com um pop-up.
 
-When the user clicks the browser action button, the popup is shown.
-The popup displays the most recent download, and has buttons to open the
-file or to remove it.
+Quando o usuário clica no botão de ação do navegador, o pop-up é exibido.
+O pop-up exibe o download mais recente e tem botões para abrir o
+Arquivo ou para removê-lo.
 
-If the user removes it, the file is removed from disk and from the browser's
-downloads history.
+Se o usuário o remover, o arquivo é removido do disco e do navegador
+Histórico de downloads.
 
-## What it shows ##
+## O que mostra ##
 
-* how to use various parts of the downloads API
+* Como usar várias partes da API de downloads

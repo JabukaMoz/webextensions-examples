@@ -2,8 +2,8 @@
 var latestDownloadId;
 
 /*
-Callback from getFileIcon.
-Initialize the displayed icon.
+Callback de getFileIcon.
+Inicialize o ícone a ser exibido.
 */
 function updateIconUrl(iconUrl) {
   var downloadIcon = document.querySelector("#icon");
@@ -15,11 +15,11 @@ function onError(error) {
 }
 
 /*
-If there was a download item,
-- remember its ID as latestDownloadId
-- initialize the displayed icon using getFileIcon
-- initialize the displayed URL 
-If there wasn't a download item, disable the "open" and "remove" buttons.
+Se houver um item de download,
+- lembre-se de seu ID como latestDownloadId
+- inicializar o ícone usando getFileIcon
+- inicializara a URL
+Se não houver um item de download, desative os botões "abrir" e "remover".
 */
 function initializeLatestDownload(downloadItems) {
   var downloadUrl = document.querySelector("#url");
@@ -38,7 +38,7 @@ function initializeLatestDownload(downloadItems) {
 }
 
 /*
-Search for the most recent download, and pass it to initializeLatestDownload()
+Procure o download mais recente e passe-o para initializeLatestDownload ()
 */
 var searching = browser.downloads.search({
   limit: 1,
@@ -47,7 +47,7 @@ var searching = browser.downloads.search({
 searching.then(initializeLatestDownload);
 
 /*
-Open the item using the associated application.
+Abra o item usando o aplicativo associado.
 */
 function openItem() {
   if (!document.querySelector("#open").classList.contains("disabled")) {
@@ -56,7 +56,7 @@ function openItem() {
 }
 
 /*
-Remove item from disk (removeFile) and from the download history (erase)
+Remover item do disco (removeFile) e do histórico de download (erase)
 */
 function removeItem() {
   if (!document.querySelector("#remove").classList.contains("disabled")) {
