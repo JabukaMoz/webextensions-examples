@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Bookmark it!",
   "version": "1.0",
-  "description": "A simple bookmark button",
+  "description": "Um simples  botão de bookmark",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/bookmark-it",
   "icons": {
     "48": "icons/bookmark-it.png",

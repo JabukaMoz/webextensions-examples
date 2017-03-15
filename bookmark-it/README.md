@@ -1,20 +1,20 @@
 # bookmark-it
 
-> This example uses APIs that are available from Firefox 47 onwards.
+> Este exemplo usa APIs que estão disponíveis a partir do Firefox 47 em diante.
 
-## What it does
+## O que faz
 
-Displays a simple button in the menu bar that toggles a bookmark for the currently active tab.
+Exibe um botão simples na barra de menu que alterna se a guia ativa está ou não nos _bookmarks_.
 
-To display the button, the extension registers a [browserAction](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/browserAction) in the manifest.
+Para exibir o botão, a extensão registra um [browserAction] (https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/browserAction) no manifesto.
 
-A background script will listen for tab events and update the browserAction icon correspondingly. It also listens for `browserAction.onClicked` events to create or remove a bookmark when the user has clicked the icon.
+Um script de _background_ irá observar os eventos de _tabs_ e atualizar o ícone da _browserAction_ correspondentemente. Ele também ouve os eventos `browserAction.onClicked` para criar ou remover um marcador quando o usuário clicou no ícone.
 
-## What it shows
+## O que ele mostra
 
-* how to use the various `bookmarks` functions
-  * create a bookmark
-  * remove a bookmark
-  * search bookmarks by url
-* how to register a browserAction
-* how to listen for tab changes
+* Como usar as várias funções `bookmarks`
+   * Criar um marcador
+   * Remover um marcador
+   * Pesquisa de marcadores por url
+* Como registrar uma browserAction
+* Como ouvir as alterações de _tabs_

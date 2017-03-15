@@ -2,8 +2,7 @@ var currentTab;
 var currentBookmark;
 
 /*
- * Updates the browserAction icon to reflect whether the current page
- * is already bookmarked.
+ * Atualiza o icone da browserAction refletindo se a guia atual está ou não nos _bookmarks_.
  */
 function updateIcon() {
   browser.browserAction.setIcon({
@@ -19,7 +18,7 @@ function updateIcon() {
 }
 
 /*
- * Add or remove the bookmark on the current page.
+ * Adiciona ou remove um marcador para a página atual.
  */
 function toggleBookmark() {
   if (currentBookmark) {
@@ -38,7 +37,7 @@ function toggleBookmark() {
 browser.browserAction.onClicked.addListener(toggleBookmark);
 
 /*
- * Switches currentTab and currentBookmark to reflect the currently active tab
+ * Alterna currentTab e currentBookmark para refletir a guia ativa atual
  */
 function updateActiveTab(tabs) {
 
@@ -57,13 +56,11 @@ function updateActiveTab(tabs) {
   gettingActiveTab.then(updateTab);
 }
 
-// TODO listen for bookmarks.onCreated and bookmarks.onRemoved once Bug 1221764 lands
-
-// listen to tab URL changes
+// Observe mudanças na URL da guia
 browser.tabs.onUpdated.addListener(updateActiveTab);
 
-// listen to tab switching
+// Observe a mudança de guias
 browser.tabs.onActivated.addListener(updateActiveTab);
 
-// update when the extension loads initially
+// atualizar quando carregar o Addon.
 updateActiveTab();
