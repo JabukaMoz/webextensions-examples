@@ -2,14 +2,14 @@ var myWindowId;
 const contentBox = document.querySelector("#content");
 
 /*
-Make the content box editable as soon as the user mouses over the sidebar.
+Tornar a caixa de conteúdo editável assim que o usuário passar o mouse sobre a barra lateral.
 */
 window.addEventListener("mouseover", (e) => {
   contentBox.setAttribute("contenteditable", true);
 });
 
 /*
-When the user mouses out, save the current contents of the box.
+Quando o usuário der mouseout, salve o conteúdo atual da caixa.
 */
 window.addEventListener("mouseout", (e) => {
   contentBox.setAttribute("contenteditable", false);
@@ -21,11 +21,11 @@ window.addEventListener("mouseout", (e) => {
 });
 
 /*
-Update the sidebar's content.
+Atualize o conteúdo da barra lateral.
 
-1) Get the active tab in this sidebar's window.
-2) Get its stored content.
-3) Put it in the content box.
+1) Obter a guia ativa na janela desta barra lateral.
+2) Obtenha seu conteúdo armazenado.
+3) Colocá-lo na caixa de conteúdo.
 */
 function updateContent() {
   browser.tabs.query({windowId: myWindowId, active: true})
@@ -38,18 +38,18 @@ function updateContent() {
 }
 
 /*
-Update content when a new tab becomes active.
+Atualizar conteúdo quando uma nova guia se torna ativa.
 */
 browser.tabs.onActivated.addListener(updateContent);
 
 /*
-Update content when a new page is loaded into a tab.
+Atualizar conteúdo quando uma nova página é carregada em uma guia.
 */
 browser.tabs.onUpdated.addListener(updateContent);
 
 /*
-When the sidebar loads, get the ID of its window,
-and update its content.
+Quando a barra lateral carrega, obtenha o ID da janela,
+E atualize seu conteúdo.
 */
 browser.windows.getCurrent({populate: true}).then((windowInfo) => {
   myWindowId = windowInfo.id;

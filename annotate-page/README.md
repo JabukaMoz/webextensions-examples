@@ -1,9 +1,9 @@
 # annotate-page
 
-## What it does
+## O que faz
 
-This example adds a sidebar that lets you take notes on the current web page. The notes are saved to local storage, and the notes for each page are shown again when you open that page again.
+Este exemplo adiciona uma barra lateral que permite que você tome notas na página da web atual. As notas são salvas no armazenamento local e as notas de cada página são exibidas novamente quando você abre essa página novamente.
 
-## What it shows
+## O que ele mostra
 
-How to create a sidebar for an add-on. How to associate the sidebar with the currently active tab in that sidebar's window. How to store and restore sidebar content.
+Como criar uma barra lateral para um add-on. Como associar a barra lateral à guia atualmente ativa na janela da barra lateral. Como armazenar e restaurar o conteúdo da barra lateral.
