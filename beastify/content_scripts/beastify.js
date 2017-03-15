@@ -1,8 +1,8 @@
 /*
 beastify():
-* removes every node in the document.body,
-* then inserts the chosen beast
-* then removes itself as a listener 
+* Remove cada nó no document.body,
+* Então insere o monstro escolhido
+* Em seguida, retira o _listener_
 */
 function beastify(request, sender, sendResponse) {
   removeEverything();
@@ -11,7 +11,7 @@ function beastify(request, sender, sendResponse) {
 }
 
 /*
-Remove every node under document.body
+Remove cada nó no document.body
 */
 function removeEverything() {
   while (document.body.firstChild) {
@@ -20,8 +20,8 @@ function removeEverything() {
 }
 
 /*
-Given a URL to a beast image, create and style an IMG node pointing to
-that image, then insert the node into the document.
+Dado um URL para uma imagem de um monstro, crie e estilize um nó IMG apontando para
+essa imagem e, em seguida, insira o nó no documento.
 */
 function insertBeast(beastURL) {
   var beastImage = document.createElement("img");
@@ -32,6 +32,6 @@ function insertBeast(beastURL) {
 }
 
 /*
-Assign beastify() as a listener for messages from the extension.
+Atribua beastify() como _listener_ para mensagens da extensão.
 */
 browser.runtime.onMessage.addListener(beastify);

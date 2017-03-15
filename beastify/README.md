@@ -1,32 +1,30 @@
 # beastify
 
 **This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+## O que faz ##
 
-## What it does ##
+A extensão inclui:
 
-The extension includes:
+* Uma ação do navegador com um pop-up incluindo HTML, CSS e JS
+* Um script de conteúdo
+* Três imagens, cada uma de uma monstro diferente, empacotados como recursos acessíveis da web
 
-* a browser action with a popup including HTML, CSS, and JS
-* a content script
-* three images, each of a different beast, packaged as web accessible resources
+Quando o usuário clica no botão de ação do navegador, o popup aparece e permite ao usuário a escolher um dos três monstros.
 
-When the user clicks the browser action button, the popup is shown, enabling
-the user to choose one of three beasts.
+Quando escolhem um monstro, a extensão injeta o script de conteúdo
+na página atual e envia ao script de conteúdo uma mensagem contendo
+O nome do monstro escolhido.
 
-When they choose a beast, the extension injects the content script into
-the current page, and sends the content script a message containing
-the name of the chosen beast.
+Quando o script de conteúdo recebe esta mensagem, ele substitui a página atual com
+o conteúdo de uma imagem do monstro escolhido.
 
-When the content script receives this message, it replaces the current page
-content with an image of the chosen beast.
+Quando o usuário clica no botão Redefinir, a página é recarregada e volta para seu formato original.
 
-When the user clicks the reset button, the page reloads, and reverts to its original form.
+## O que mostra ##
 
-## What it shows ##
-
-* write a browser action with a popup
-* give the popup style and behavior using CSS and JS
-* inject a content script programmatically using `tabs.executeScript()`
-* send a message from the main extension to a content script
-* use web accessible resources to enable web pages to load packaged content
-* reload web pages
+* Escrever uma ação do navegador com um popup
+* Dar o estilo e comportamento ao popup usando CSS e JS
+* Injetar um script de conteúdo usando programaticamente `tabs.executeScript ()`
+* Enviar uma mensagem do Addon principal para um script de conteúdo
+* Usar recursos acessíveis na web para permitir que páginas da Web carregem conteúdo empacotado
+* Recarregar páginas da web

@@ -1,5 +1,5 @@
 /*
-Given the name of a beast, get the URL to the corresponding image.
+Dado o nome de um monstro, pegue o URL para a imagem correspondente.
 */
 function beastNameToURL(beastName) {
   switch (beastName) {
@@ -13,17 +13,17 @@ function beastNameToURL(beastName) {
 }
 
 /*
-Listen for clicks in the popup.
+Observe os cliques no pop-up.
 
-If the click is on one of the beasts:
-  Inject the "beastify.js" content script in the active tab.
+Se o clique estiver em uma das bestas:
+   Injete o script de conteúdo "beastify.js" na guia ativa.
 
-  Then get the active tab and send "beastify.js" a message
-  containing the URL to the chosen beast's image.
+   Em seguida, obtenha a guia ativa e envie uma mensagem para "beastify.js"
+   contendo a URL para a imagem do monstro escolhido.
 
-If it's on a button wich contains class "clear":
-  Reload the page.
-  Close the popup. This is needed, as the content script malfunctions after page reloads.
+Se estiver em um botão que contenha classe "clear":
+   Recarregue a página.
+   Feche o popup. Isso é necessário, pois o script de conteúdo não funciona corretamente após recarregar a página.
 */
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("beast")) {
