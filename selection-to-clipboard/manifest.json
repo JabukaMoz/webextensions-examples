@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "selection-to-clipboard",
-    "description": "Example of WebExtensionAPI for writing to the clipboard",
+    "description": "Exemplo de WebExtensionAPI para escrever na área de transferência",
     "version": "1.0",
     "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/selection-to-clipboard",
 

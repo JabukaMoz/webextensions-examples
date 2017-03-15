@@ -1,5 +1,5 @@
 /*
-copy the selected text to clipboard
+copia o texto selecionado para a área de transferência
 */
 function copySelection(e) {
     var selectedText = window.getSelection().toString().trim();
@@ -10,6 +10,6 @@ function copySelection(e) {
 }
 
 /*
-Add copySelection() as a listener to mouseup events.
+Adiciona copySelection() como _listener_ para eventos de mouseup.
 */
 document.addEventListener("mouseup", copySelection);

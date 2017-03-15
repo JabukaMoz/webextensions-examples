@@ -1,23 +1,25 @@
 # selection-to-clipboard
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+**Este complemento injeta JavaScript em páginas da web. O domínio `addons.mozilla.org` não permite esta operação, por isso este complemento não funciona correctamente quando é executado em páginas no domínio` addons.mozilla.org`.**
 
-## What it does
+## O que faz
 
-This extension includes:
+Esta extensão inclui:
 
-* a content script, "content-script.js", that is injected into all pages
+* Um script de conteúdo, "content-script.js", que é injetado em todas as páginas
 
-The content script listens for text selections in the page it's attached to and copies the text to the clipboard on mouse-up.
+O script de conteúdo observa as seleções de texto na página em que está anexado e copia o texto para a área de transferência no ```mouseUp```.
 
-## What it shows
+## O que ele mostra
 
-* how to inject content scripts declaratively using manifest.json
-* how to write to the [clipboard](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Interact_with_the_clipboard)
+* Como injetar scripts de conteúdo declarativamente usando manifest.json
+* Como escrever na [área de transferência](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Interact_with_the_clipboard)
 
-## Note
-* If the `copySelection` function was in a browser event `clipboardWrite` permissions would be required e.g.
+## Nota
+* Se a função `copySelection` estiver em um evento do navegador, as permissões de ``clipboardWrite` são necessárias
+
 ```
 "permissions": ["clipboardWrite"]
 ```
-See [Interact with the clipboard](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Interact_with_the_clipboard.)
+
+Veja [Interact with the clipboard](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Interact_with_the_clipboard.)
