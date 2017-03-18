@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Guarda Palavra",
+  "version": "1.0",
+  "description": "Um simples  botão para guardar palavras",
+  "icons": {
+    "48": "icons/bookmark-it.png",
+    "96": "icons/bookmark-it@2x.png"
+  },
+
+  "permissions": [
+    "bookmarks",
+    "tabs",
+    "activeTab"
+  ],
+
+   "content_scripts": [
+    {
+      "matches": [
+          "*://*.translate.google.com/*", 
+          "*://*.translate.google.com.br/*"
+       ],
+      "js": ["pegapalavra.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/star-empty-38.png",
+    "default_title": "Guarda Palavra!"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  }
+
+}
