@@ -21,6 +21,7 @@ function pegaPalavra() {
 function recebiMensagem() {
     var dados = pegaPalavra()
     console.log("[content script] palavras: ", dados);
+    browser.runtime.sendMessage(dados);
 }
 
 browser.runtime.onMessage.addListener(recebiMensagem);
