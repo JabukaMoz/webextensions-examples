@@ -1,0 +1,19 @@
+{
+
+  "description": "Transforma qualquer citação a palavra USP/UFSCAR em UNESP e adiciona negrito",
+  "manifest_version": 2,
+  "name": "Unespify",
+  "version": "1.0",
+  "homepage_url": "http://hardcodigo.com.br",
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["unespify.js"]
+    }
+  ]
+
+}
