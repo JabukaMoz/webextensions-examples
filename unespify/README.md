@@ -1,16 +1,13 @@
-# borderify
+# Unespify
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+**Esse add-on altera todas as ocorrências de textos USP/UFSCAR para Unesp. Exemplo criado para o workshop do Flisol Jaboticabal 2017**
 
-## What it does
+## O que ele faz
 
-This extension just includes:
+* um script extremamente simples, "unespify.js", que altera o texto em qualquer url acessada
 
-* a content script, "borderify.js", that is injected into any pages
-under "mozilla.org/" or any of its subdomains
+O script utiliza o comando replace e uma expressão regular para alterar todas as ocorrências de textos USP/UFSCAR para Unesp.
 
-The content script draws a border around the document.body.
+## O que ele demonstra
 
-## What it shows
-
-* how to inject content scripts declaratively using manifest.json
+* Como alterar um determinado texto em qualquer página
